@@ -32,20 +32,20 @@
 						<goals>
 							<goal>schemagen</goal>
 						</goals>
+						<configuration>
+							<transformSchemas>
+								<transformSchema>
+									<uri>http://localhost/DocentCampus/</uri>
+									<toPrefix>cd</toPrefix>
+									<toFile>cdschema.xsd</toFile>
+								</transformSchema>
+							</transformSchemas>
+							<includes>
+								<include>**/*.java</include>
+							</includes>
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<transformSchemas>
-						<transformSchema>
-							<uri>http://localhost/DocentCampus/</uri>
-							<toPrefix>cd</toPrefix>
-							<toFile>cdschema</toFile>
-						</transformSchema>
-					</transformSchemas>
-					<includes>
-						<include>**/*.java</include>
-					</includes>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
