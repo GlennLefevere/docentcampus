@@ -18,5 +18,10 @@ public class Initializer extends AbstractAnnotationConfigMessageDispatcherServle
 	protected Class<?>[] getServletConfigClasses() {
 		return new Class[]{DocentCampusEndpoint.class};
 	}
+	
+	@Override
+	protected String[] getServletMappings() {
+		return new String[] { "/" };
+	}
 
 }
