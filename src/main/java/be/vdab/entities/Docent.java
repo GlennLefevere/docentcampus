@@ -41,7 +41,7 @@ public class Docent  {
 
 	private BigDecimal wedde;
 
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="campusid")
 	private Campus campussen;
 
