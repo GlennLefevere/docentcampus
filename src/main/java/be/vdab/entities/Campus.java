@@ -3,13 +3,11 @@ package be.vdab.entities;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -18,8 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @Entity
 @Table(name="campussen")
-@XmlType(namespace = "http://localhost/DocentCampus/")
-@XmlAccessorType(XmlAccessType.FIELD)
+
 public class Campus  {
 	@Id
 	@GeneratedValue
@@ -37,8 +34,8 @@ public class Campus  {
 
 	private String straat;
 
-	@OneToMany(mappedBy="campussen")
-	private Set<Docent> docentens;
+	@OneToMany(mappedBy="campussen", fetch = FetchType.EAGER)
+	private Set<Docent> docenten;
 
 	public Campus() {
 	}
@@ -100,11 +97,11 @@ public class Campus  {
 	}
 
 	public Set<Docent> getDocentens() {
-		return this.docentens;
+		return this.docenten;
 	}
 
 	public void setDocentens(Set<Docent> docentens) {
-		this.docentens = docentens;
+		this.docenten = docentens;
 	}
 
 	public Docent addDocenten(Docent docenten) {

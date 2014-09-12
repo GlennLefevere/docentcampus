@@ -21,7 +21,7 @@ public class DocentServiceImpl implements DocentService{
 
 	@Override
 	public List<Docent> findAll(String stuk) {
-		return docentDAO.findByFamilienaamLike(stuk);
+		return docentDAO.findByFamilienaamContaining(stuk);
 	}
 
 }

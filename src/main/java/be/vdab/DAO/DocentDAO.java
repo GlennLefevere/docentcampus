@@ -8,6 +8,6 @@ import be.vdab.entities.Docent;
 
 public interface DocentDAO extends JpaRepository<Docent, Long>{
 
-	List<Docent> findByFamilienaamLike(String stuk);
+	List<Docent> findByFamilienaamContaining(String stuk);
 
 }

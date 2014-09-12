@@ -11,7 +11,7 @@ public class Initializer extends AbstractAnnotationConfigMessageDispatcherServle
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[]{CreateControlerBeans.class, CreateDAOBeans.class, CreateDataSourceBean.class, CreateServiceBeans.class};
+		return new Class[]{CreateControlerBeans.class, CreateDAOBeans.class, CreateDataSourceBean.class, CreateServiceBeans.class, CreateWebControlerBeans.class};
 	}
 
 	@Override
